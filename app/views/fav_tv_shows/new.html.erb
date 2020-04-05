@@ -1,0 +1,16 @@
+<h2>Enter valid email Id to get alerts for your favorite tv shows</h2>
+
+<% if @error_messages.present? %>
+  <ul>
+    <% @error_messages.each do |error_message| %>
+      <li><%= error_message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @fav_show do |f| %>
+  <%= f.hidden_field :tv_series_id, value: @fav_show.tv_series_id %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit 'Get Updates' %>
+<% end %>

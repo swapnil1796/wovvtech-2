@@ -1,0 +1,23 @@
+<%= form_for :search, url: tv_shows_path, method: :get do |f| %>
+  <div>
+    <%= f.text_field :name %>
+    <%= f.submit 'Search' %>
+  </div>
+<% end %>
+<br>
+<table border='2'>
+  <tr>
+    <td>Show Name</td>
+    <td>Starts At</td>
+    <td>Ends At</td>
+    <td>Streams on</td>
+  </tr>
+  <% @tv_shows.each do |show| %>
+    <tr>
+      <td><%= link_to show.name, tv_show_path(show) %></td>
+      <td><%= show.from_time %></td>
+      <td><%= show.to_time %></td>
+      <td><%= show.channel.name %></td>
+    </tr>
+  <% end %>
+</table>

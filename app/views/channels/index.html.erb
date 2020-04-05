@@ -1,0 +1,23 @@
+<% @channels.each do |channel| %>
+  <div>
+    <b><%= channel.name %></b>
+  </div>
+<% end %>
+
+<table border='2'>
+  <tr>
+    <td>Show Name</td>
+    <td>Starts At</td>
+    <td>Ends At</td>
+    <td>Streams on</td>
+  </tr>
+  <% @tv_shows.each do |show| %>
+    <tr>
+      <td><%= link_to show.name, tv_show_path(show) %></td>
+      <td><%= show.from_time %></td>
+      <td><%= show.to_time %></td>
+      <td><%= show.channel.name %></td>
+    </tr>
+  <% end %>
+</table>
+

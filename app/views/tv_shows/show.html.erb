@@ -1,0 +1,7 @@
+<div>
+  <b><%= @tv_show.name %></b>
+  <b><%= @tv_show.from_time %></b>
+  <b><%= @tv_show.to_time %></b>
+  <b><%= @tv_show.channel.name %></b>
+  <%= link_to 'Mark as Favorite', new_fav_tv_show_path(tv_series_id: @tv_show) %>
+</div>
